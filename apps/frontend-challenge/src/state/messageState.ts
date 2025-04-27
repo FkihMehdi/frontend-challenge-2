@@ -1,5 +1,5 @@
 import { atom, selector } from 'recoil';
-import { MessageState, Priority } from '../types';
+import { MessageState, Priority } from '@frontend-challenge/types';
 
 export const messageStateAtom = atom<MessageState>({
   key: 'messageState',
