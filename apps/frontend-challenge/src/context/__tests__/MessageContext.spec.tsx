@@ -1,6 +1,6 @@
 import { render, screen, act } from '@testing-library/react';
 import { RecoilRoot } from 'recoil';
-import { MessageProvider, useMessages } from './MessageContext';
+import { MessageProvider, useMessages } from '../MessageContext';
 import '@testing-library/jest-dom';
 
 const TestComponent = () => {

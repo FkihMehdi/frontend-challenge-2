@@ -1,0 +1,7 @@
+{
+  "name": "types",
+  "root": "libs/types",
+  "sourceRoot": "libs/types/src",
+  "projectType": "library",
+  "tags": []
+}

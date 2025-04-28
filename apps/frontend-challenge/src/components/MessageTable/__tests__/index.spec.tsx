@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import MessageTable from './index';
+import MessageTable from '../index';
 import { useRecoilValue } from 'recoil';
 
 jest.mock('recoil', () => {
@@ -11,7 +11,7 @@ jest.mock('recoil', () => {
   };
 });
 
-jest.mock('./MessageColumn', () => (props: any) => (
+jest.mock('../MessageColumn', () => (props: any) => (
   <div data-testid="message-column">
     {props.title} - {props.count}
   </div>
