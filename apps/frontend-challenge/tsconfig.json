@@ -9,6 +9,9 @@
       "path": "../../libs/api"
     },
     {
+      "path": "../../libs/shared-ui"
+    },
+    {
       "path": "./tsconfig.app.json"
     },
     {
