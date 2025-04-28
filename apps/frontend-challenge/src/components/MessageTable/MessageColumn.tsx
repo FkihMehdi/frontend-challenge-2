@@ -11,17 +11,6 @@ interface MessageColumnProps {
   colorClass: string;
 }
 
-// const areEqual = (
-//   prevProps: MessageColumnProps,
-//   nextProps: MessageColumnProps
-// ) => {
-//   return (
-//     prevProps.count === nextProps.count &&
-//     prevProps.title === nextProps.title &&
-//     prevProps.messages === nextProps.messages
-//   );
-// };
-
 const MessageColumn: React.FC<MessageColumnProps> = ({
   title,
   messages,
