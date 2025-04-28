@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Header from './index';
+import Header from '../index';
 
 describe('Header', () => {
   it('renders the title correctly', () => {

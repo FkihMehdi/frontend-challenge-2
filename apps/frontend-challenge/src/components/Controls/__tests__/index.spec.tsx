@@ -1,8 +1,8 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Controls from './index';
+import Controls from '../index';
 import { useRecoilValue } from 'recoil';
-import { useMessages } from '../../context/MessageContext';
+import { useMessages } from '../../../context/MessageContext';
 
 jest.mock('recoil', () => {
   const actualRecoil = jest.requireActual('recoil');
@@ -12,7 +12,7 @@ jest.mock('recoil', () => {
   };
 });
 
-jest.mock('../../context/MessageContext', () => ({
+jest.mock('../../../context/MessageContext', () => ({
   useMessages: jest.fn(),
 }));
 

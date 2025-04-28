@@ -6,7 +6,7 @@ import {
   infoMessagesSelector,
   latestErrorSelector,
   messageCounts,
-} from './messageState';
+} from '../messageState';
 import { Priority } from '@frontend-challenge/types';
 
 describe('Recoil state and selectors', () => {

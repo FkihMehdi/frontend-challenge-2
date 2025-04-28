@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import MessageItem from './MessageItem';
+import MessageItem from '../MessageItem';
 import { Message, Priority } from '@frontend-challenge/types';
 
 describe('MessageItem', () => {

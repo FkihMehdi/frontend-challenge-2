@@ -1,10 +1,10 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import MessageColumn from './MessageColumn';
+import MessageColumn from '../MessageColumn';
 import { Message, Priority } from '@frontend-challenge/types';
-import { useMessages } from '../../context/MessageContext';
+import { useMessages } from '../../../context/MessageContext';
 
-jest.mock('./MessageItem', () => ({ message }: any) => (
+jest.mock('../MessageItem', () => ({ message }: any) => (
   <div data-testid="message-item">
     {message.message}
     <button
@@ -16,7 +16,7 @@ jest.mock('./MessageItem', () => ({ message }: any) => (
     </button>
   </div>
 ));
-jest.mock('../../context/MessageContext', () => ({
+jest.mock('../../../context/MessageContext', () => ({
   useMessages: jest.fn(),
 }));
 
