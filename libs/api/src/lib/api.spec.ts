@@ -18,7 +18,6 @@ describe('startMessageStream and stopMessageStream', () => {
   it('should start the message stream and receive messages', () => {
     startMessageStream(callback);
 
-    // Fast-forward timers to simulate messages being emitted
     jest.advanceTimersByTime(1000);
 
     expect(callback).toHaveBeenCalled();
@@ -34,7 +33,6 @@ describe('startMessageStream and stopMessageStream', () => {
     startMessageStream(callback);
     jest.advanceTimersByTime(1000);
 
-    // Should not have created a second stream (no double messages)
     expect(callback.mock.calls.length).toBeGreaterThanOrEqual(firstCallCount);
     expect(callback.mock.calls.length).toBeLessThanOrEqual(firstCallCount + 1);
   });
@@ -49,6 +47,6 @@ describe('startMessageStream and stopMessageStream', () => {
 
     jest.advanceTimersByTime(3000);
 
-    expect(callback.mock.calls.length).toBe(callCountAfterStop); // No new calls after stop
+    expect(callback.mock.calls.length).toBe(callCountAfterStop);
   });
 });
