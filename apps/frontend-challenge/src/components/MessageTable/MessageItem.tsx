@@ -1,5 +1,5 @@
 import React from 'react';
-import { Message, Priority } from '../../types';
+import { Message, Priority } from '@frontend-challenge/types';
 import { X } from 'lucide-react';
 
 interface MessageItemProps {

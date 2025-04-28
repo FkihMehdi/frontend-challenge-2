@@ -3,7 +3,7 @@ import { useRecoilValue } from 'recoil';
 import { latestErrorSelector } from '../../state/messageState';
 import { useMessages } from '../../context/MessageContext';
 import { X } from 'lucide-react';
-import { Message } from '../../types';
+import { Message } from '@frontend-challenge/types';
 
 const ErrorSnackbar: React.FC = () => {
   const latestError = useRecoilValue(latestErrorSelector);

@@ -10,7 +10,7 @@ const swcJestConfig = JSON.parse(
 swcJestConfig.swcrc = false;
 
 export default {
-  displayName: '@frontend-challenge/shared-ui',
+  displayName: '@frontend-challenge/utilities',
   preset: '../../jest.preset.js',
   testEnvironment: 'node',
   transform: {

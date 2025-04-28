@@ -1,7 +1,8 @@
 import React from 'react';
-import { Message } from '../../types';
+import { Message } from '@frontend-challenge/types';
 import MessageItem from './MessageItem';
 import { useMessages } from '../../context/MessageContext';
+import { areEqual } from '@frontend-challenge/utilities';
 
 interface MessageColumnProps {
   title: string;
@@ -10,16 +11,16 @@ interface MessageColumnProps {
   colorClass: string;
 }
 
-const areEqual = (
-  prevProps: MessageColumnProps,
-  nextProps: MessageColumnProps
-) => {
-  return (
-    prevProps.count === nextProps.count &&
-    prevProps.title === nextProps.title &&
-    prevProps.messages === nextProps.messages
-  );
-};
+// const areEqual = (
+//   prevProps: MessageColumnProps,
+//   nextProps: MessageColumnProps
+// ) => {
+//   return (
+//     prevProps.count === nextProps.count &&
+//     prevProps.title === nextProps.title &&
+//     prevProps.messages === nextProps.messages
+//   );
+// };
 
 const MessageColumn: React.FC<MessageColumnProps> = ({
   title,
@@ -67,4 +68,6 @@ const MessageColumn: React.FC<MessageColumnProps> = ({
   );
 };
 
-export default React.memo(MessageColumn, areEqual);
+export default React.memo(MessageColumn, (prev, next) =>
+  areEqual(prev, next, ['count', 'title', 'messages'])
+);

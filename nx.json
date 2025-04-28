@@ -31,7 +31,12 @@
           "watchDepsName": "watch-deps"
         }
       },
-      "exclude": ["libs/api/*", "libs/types/*", "libs/shared-ui/*"]
+      "exclude": [
+        "libs/api/*",
+        "libs/types/*",
+        "libs/shared-ui/*",
+        "libs/utilities/*"
+      ]
     },
     {
       "plugin": "@nx/react/router-plugin",
@@ -81,7 +86,12 @@
     },
     {
       "plugin": "@nx/js/typescript",
-      "include": ["libs/api/*", "libs/types/*", "libs/shared-ui/*"],
+      "include": [
+        "libs/api/*",
+        "libs/types/*",
+        "libs/shared-ui/*",
+        "libs/utilities/*"
+      ],
       "options": {
         "typecheck": {
           "targetName": "typecheck"

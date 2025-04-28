@@ -16,7 +16,7 @@
       "path": "./libs/types"
     },
     {
-      "path": "./libs/shared-ui"
+      "path": "./libs/utilities"
     }
   ]
 }
