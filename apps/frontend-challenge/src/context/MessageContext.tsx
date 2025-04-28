@@ -7,8 +7,8 @@ import React, {
 } from 'react';
 import { useRecoilState } from 'recoil';
 import { messageStateAtom } from '../state/messageState';
-import { Message } from '../types';
-import { startMessageStream, stopMessageStream } from '../app/Api';
+import { Message } from '@frontend-challenge/types';
+import { startMessageStream, stopMessageStream } from '@frontend-challenge/api';
 
 interface MessageContextProps {
   addMessage: (message: Message) => void;

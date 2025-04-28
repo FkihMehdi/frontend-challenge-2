@@ -9,25 +9,23 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "18.16.9",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "faker": "^5.5.3",
     "lodash": "^4.17.2",
+    "lucide-react": "^0.344.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "recoil": "^0.7.7",
     "rxjs": "^7.3.0",
     "styled-components": "^5.3.1",
     "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1",
-    "lucide-react": "^0.344.0",
-    "recoil": "^0.7.7"
+    "web-vitals": "^1.0.1"
   },
   "devDependencies": {
-    "@types/faker": "^5.5.8",
-    "@types/lodash": "^4.14.172",
     "@eslint/js": "^9.8.0",
     "@nx/cypress": "20.8.1",
     "@nx/eslint": "20.8.1",
@@ -42,9 +40,12 @@
     "@swc/cli": "~0.6.0",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
+    "@swc/jest": "~0.2.36",
     "@testing-library/dom": "10.4.0",
     "@testing-library/react": "16.1.0",
+    "@types/faker": "^5.5.8",
     "@types/jest": "^29.5.12",
+    "@types/lodash": "^4.14.172",
     "@types/node": "^20.0.0",
     "@types/react": "19.0.0",
     "@types/react-dom": "19.0.0",
@@ -62,6 +63,7 @@
     "eslint-plugin-react-hooks": "5.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "jest-environment-node": "^29.7.0",
     "jiti": "2.4.2",
     "jsdom": "~22.1.0",
     "nx": "20.8.1",
@@ -77,6 +79,7 @@
     "vitest": "^3.0.0"
   },
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "libs/*"
   ]
 }

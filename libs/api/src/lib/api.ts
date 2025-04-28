@@ -1,8 +1,7 @@
-import random from 'lodash/random';
+import { random } from 'lodash';
 import faker from 'faker';
 import { Observable } from 'rxjs';
-import { Priority } from '../types';
-import { Message } from '../types';
+import { Priority, Message } from '@frontend-challenge/types';
 
 const observable = new Observable<Message>((subscriber) => {
   const generate = () => {

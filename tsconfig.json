@@ -8,6 +8,15 @@
     },
     {
       "path": "./apps/frontend-challenge"
+    },
+    {
+      "path": "./libs/api"
+    },
+    {
+      "path": "./libs/types"
+    },
+    {
+      "path": "./libs/utilities"
     }
   ]
 }
