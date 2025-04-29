@@ -24,4 +24,8 @@ jobs:
       - name: Show coverage in GitHub Actions summary
         run: |
           echo '### Coverage Summary' >> $GITHUB_STEP_SUMMARY
-          lcov-summary test-output/jest/coverage/lcov.info >> $GITHUB_STEP_SUMMARY
+          if [ -f apps/frontend-challenge/test-output/jest/coverage/lcov.info ]; then
+              npx lcov-summary apps/frontend-challenge/test-output/jest/coverage/lcov.info >> $GITHUB_STEP_SUMMARY
+          else
+              echo "i didn t find the path of this file" >> $GITHUB_STEP_SUMMARY
+          fi
