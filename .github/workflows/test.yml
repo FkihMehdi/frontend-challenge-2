@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: '18'
       - name: Install dependencies
-        run: npm install
+        run: npm install --force
 
       - name: Run tests with coverage
         run: npx nx test frontend-challenge --coverage
