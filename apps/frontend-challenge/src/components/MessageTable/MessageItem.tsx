@@ -1,12 +1,7 @@
 import React from 'react';
-import { Message } from '@frontend-challenge/types';
 import { getMessageBgColor } from '@frontend-challenge/utilities';
 import { X } from 'lucide-react';
-
-interface MessageItemProps {
-  message: Message;
-}
-
+import { MessageItemProps } from '@frontend-challenge/types';
 const MessageItem: React.FC<MessageItemProps> = ({ message }) => {
   return (
     <div

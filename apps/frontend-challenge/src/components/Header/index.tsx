@@ -1,8 +1,5 @@
 import React from 'react';
-
-interface HeaderProps {
-  title: string;
-}
+import { HeaderProps } from '@frontend-challenge/types';
 
 const Header: React.FC<HeaderProps> = ({ title }) => {
   return (

@@ -1,15 +1,9 @@
 import React from 'react';
-import { Message } from '@frontend-challenge/types';
+// import { Message } from '@frontend-challenge/types';
 import MessageItem from './MessageItem';
 import { useMessages } from '../../hooks/useMessage';
 import { areEqual } from '@frontend-challenge/utilities';
-
-interface MessageColumnProps {
-  title: string;
-  messages: Message[];
-  count: number;
-  colorClass: string;
-}
+import { MessageColumnProps } from '@frontend-challenge/types';
 
 const MessageColumn: React.FC<MessageColumnProps> = ({
   title,

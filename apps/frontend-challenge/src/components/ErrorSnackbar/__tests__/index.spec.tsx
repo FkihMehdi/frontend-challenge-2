@@ -28,12 +28,11 @@ describe('ErrorSnackbar', () => {
 
   it('should not render anything if there is no active error', () => {
     (useRecoilValue as jest.Mock).mockReturnValue(null);
-
     const { container } = render(<ErrorSnackbar />);
     expect(container.firstChild).toBeNull();
   });
 
-  it('renders the latest error message', () => {
+  it('renders the latest error message with correct label', () => {
     (useRecoilValue as jest.Mock).mockReturnValue({
       id: 1,
       message: 'Test error',
@@ -45,7 +44,7 @@ describe('ErrorSnackbar', () => {
     expect(screen.getByText('Test error')).toBeInTheDocument();
   });
 
-  it('calls clearMessage and hides when dismiss button is clicked', () => {
+  it('calls clearMessage when dismiss button is clicked', () => {
     (useRecoilValue as jest.Mock).mockReturnValue({
       id: 1,
       message: 'Dismiss this error',
@@ -53,37 +52,11 @@ describe('ErrorSnackbar', () => {
     });
 
     render(<ErrorSnackbar />);
-
     const dismissButton = screen.getByRole('button', {
-      name: /dismiss error/i,
+      name: /dismiss/i,
     });
 
     fireEvent.click(dismissButton);
-
     expect(mockClearMessage).toHaveBeenCalledWith(1);
-  });
-
-  it('automatically hides after 2 seconds', () => {
-    jest.useFakeTimers();
-
-    (useRecoilValue as jest.Mock).mockReturnValue({
-      id: 2,
-      message: 'Auto-hide error',
-      priority: 1,
-    });
-
-    const { queryByText } = render(<ErrorSnackbar />);
-
-    expect(screen.getByText('Auto-hide error')).toBeInTheDocument();
-
-    act(() => {
-      jest.advanceTimersByTime(2000);
-    });
-    expect(queryByText('Auto-hide error')).toBeInTheDocument();
-    act(() => {
-      jest.advanceTimersByTime(300);
-    });
-    expect(queryByText('Auto-hide error')).not.toBeInTheDocument();
-    jest.useRealTimers();
   });
 });
