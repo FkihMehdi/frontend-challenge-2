@@ -2,7 +2,7 @@ import { render, screen, fireEvent, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ErrorSnackbar from '../index';
 import { useRecoilValue } from 'recoil';
-import { useMessages } from '../../../context/MessageContext';
+import { useMessages } from '../../../hooks/useMessage';
 
 jest.mock('recoil', () => {
   const actualRecoil = jest.requireActual('recoil');
@@ -12,7 +12,7 @@ jest.mock('recoil', () => {
   };
 });
 
-jest.mock('../../../context/MessageContext', () => ({
+jest.mock('../../../hooks/useMessage', () => ({
   useMessages: jest.fn(),
 }));
 

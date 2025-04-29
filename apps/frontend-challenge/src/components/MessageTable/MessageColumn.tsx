@@ -1,7 +1,7 @@
 import React from 'react';
 import { Message } from '@frontend-challenge/types';
 import MessageItem from './MessageItem';
-import { useMessages } from '../../context/MessageContext';
+import { useMessages } from '../../hooks/useMessage';
 import { areEqual } from '@frontend-challenge/utilities';
 
 interface MessageColumnProps {

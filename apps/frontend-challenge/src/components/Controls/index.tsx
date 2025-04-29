@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
 import { messageCounts } from '../../state/messageState';
-import { useMessages } from '../../context/MessageContext';
+import { useMessages } from '../../hooks/useMessage';
 import { Play, Pause, Trash2 } from 'lucide-react';
 
 const Controls: React.FC = () => {

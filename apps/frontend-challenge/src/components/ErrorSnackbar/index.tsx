@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { latestErrorSelector } from '../../state/messageState';
-import { useMessages } from '../../context/MessageContext';
+import { useMessages } from '../../hooks/useMessage';
 import { X } from 'lucide-react';
 import { Message } from '@frontend-challenge/types';
 

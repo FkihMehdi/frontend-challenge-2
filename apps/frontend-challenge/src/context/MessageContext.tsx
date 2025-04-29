@@ -1,16 +1,10 @@
-import React, {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-} from 'react';
+import React, { createContext, useCallback, useEffect, useMemo } from 'react';
 import { useRecoilState } from 'recoil';
 import { messageStateAtom } from '../state/messageState';
 import { Message } from '@frontend-challenge/types';
 import { startMessageStream, stopMessageStream } from '@frontend-challenge/api';
 
-interface MessageContextProps {
+export interface MessageContextProps {
   addMessage: (message: Message) => void;
   clearAllMessages: () => void;
   clearMessage: (id: number) => void;
@@ -18,7 +12,7 @@ interface MessageContextProps {
   isRunning: boolean;
 }
 
-const MessageContext = createContext<MessageContextProps | undefined>(
+export const MessageContext = createContext<MessageContextProps | undefined>(
   undefined
 );
 
@@ -81,10 +75,10 @@ export const MessageProvider: React.FC<{ children: React.ReactNode }> = ({
   );
 };
 
-export const useMessages = () => {
-  const context = useContext(MessageContext);
-  if (!context) {
-    throw new Error('useMessages must be used within a MessageProvider');
-  }
-  return context;
-};
+// export const useMessages = () => {
+//   const context = useContext(MessageContext);
+//   if (!context) {
+//     throw new Error('useMessages must be used within a MessageProvider');
+//   }
+//   return context;
+// };
