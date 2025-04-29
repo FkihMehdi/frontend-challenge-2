@@ -17,3 +17,10 @@ jobs:
 
       - name: Run tests with coverage
         run: npx nx test frontend-challenge --coverage
+      - name: Convert lcov to markdown
+        run: |
+          npm install -D @dhruv-m-patel/lcov-to-markdown
+          npx @dhruv-m-patel/lcov-to-markdown ./coverage/frontend-challenge/lcov.info > coverage.md
+
+      - name: Show coverage markdown in summary
+        run: cat coverage.md
