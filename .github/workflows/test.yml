@@ -1,0 +1,31 @@
+name: Coverage Report
+
+on: push
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm install --force
+
+      - name: Run tests with coverage
+        run: npx nx test frontend-challenge --coverage
+
+      - name: Install lcov-summary --force
+        run: npm install -g lcov-summary
+
+      - name: Show coverage in GitHub Actions summary
+        run: |
+          echo '### Coverage Summary' >> $GITHUB_STEP_SUMMARY
+          if [ -f apps/frontend-challenge/test-output/jest/coverage/lcov.info ]; then
+              npx lcov-summary apps/frontend-challenge/test-output/jest/coverage/lcov.info >> $GITHUB_STEP_SUMMARY
+          else
+              echo "i didn t find the path of this file" >> $GITHUB_STEP_SUMMARY
+          fi
