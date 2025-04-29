@@ -17,10 +17,11 @@ jobs:
 
       - name: Run tests with coverage
         run: npx nx test frontend-challenge --coverage
-      - name: Convert lcov to markdown
-        run: |
-          npm install -D @dhruv-m-patel/lcov-to-markdown --force
-          npx @dhruv-m-patel/lcov-to-markdown test-output/jest/coverage/lcov.info > coverage.md
 
-      - name: Show coverage markdown in summary
-        run: cat coverage.md
+      - name: Install lcov-summary --force
+        run: npm install -g lcov-summary
+
+      - name: Show coverage in GitHub Actions summary
+        run: |
+          echo '### Coverage Summary' >> $GITHUB_STEP_SUMMARY
+          lcov-summary test-output/jest/coverage/lcov.info >> $GITHUB_STEP_SUMMARY
